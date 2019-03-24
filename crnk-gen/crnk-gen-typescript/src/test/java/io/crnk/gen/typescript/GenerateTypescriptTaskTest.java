@@ -67,7 +67,7 @@ public class GenerateTypescriptTaskTest {
 
         project.getPluginManager().apply("com.moowork.node");
         project.getPluginManager().apply(JavaPlugin.class);
-        project.getPluginManager().apply(TSGeneratorPlugin.class);
+        project.getPluginManager().apply(TSGeneratorModule.class);
 
         TSGeneratorExtension config = project.getExtensions().getByType(TSGeneratorExtension.class);
         config.setForked(false);
@@ -82,8 +82,8 @@ public class GenerateTypescriptTaskTest {
         config.getNpm().setPackageVersion("0.0.1");
         config.setFormat(resourceFormat);
 
-        TSGeneratorPlugin plugin = project.getPlugins().getPlugin(TSGeneratorPlugin.class);
-        plugin.init(project);
+        TSGeneratorModule plugin = project.getPlugins().getPlugin(TSGeneratorModule.class);
+        plugin.initDefaults(project);
 
         GenerateTypescriptTask task = (GenerateTypescriptTask) project.getTasks().getByName("generateTypescript");
         task.runGeneration(Thread.currentThread().getContextClassLoader());

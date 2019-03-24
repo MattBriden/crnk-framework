@@ -30,14 +30,14 @@ public class PublishTypescriptTaskTest {
 		Project project = ProjectBuilder.builder().withName("crnk-gen-typescript-test").withProjectDir(outputDir).build();
 		project.setVersion("0.0.1");
 		project.getPluginManager().apply(JavaPlugin.class);
-		project.getPluginManager().apply(TSGeneratorPlugin.class);
+		project.getPluginManager().apply(TSGeneratorModule.class);
 
 		TSGeneratorExtension extension = project.getExtensions().getByType(TSGeneratorExtension.class);
 		extension.getRuntime().setConfiguration(null);
 		extension.getNpm().setPackagingEnabled(true);
 
-		TSGeneratorPlugin plugin = project.getPlugins().getPlugin(TSGeneratorPlugin.class);
-		plugin.init(project);
+		TSGeneratorModule plugin = project.getPlugins().getPlugin(TSGeneratorModule.class);
+		plugin.initDefaults(project);
 
 		PublishTypescriptStubsTask task = (PublishTypescriptStubsTask) project.getTasks().getByName("publishTypescript");
 		Assert.assertEquals("publish", task.getGroup());

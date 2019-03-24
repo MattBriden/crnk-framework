@@ -1,7 +1,7 @@
 package io.crnk.gen.typescript.model;
 
-import io.crnk.gen.typescript.writer.TSCodeStyle;
-import io.crnk.gen.typescript.writer.TSWriter;
+import io.crnk.gen.typescript.model.writer.TSCodeStyle;
+import io.crnk.gen.typescript.model.writer.TSWriter;
 import org.gradle.internal.impldep.org.testng.Assert;
 import org.junit.Before;
 import org.junit.Test;

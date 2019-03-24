@@ -1,7 +1,7 @@
 package io.crnk.gen.typescript;
 
 import io.crnk.core.engine.document.Resource;
-import io.crnk.gen.runtime.RuntimeClassLoaderFactory;
+import io.crnk.gen.gradle.runtime.RuntimeClassLoaderFactory;
 import io.crnk.gen.typescript.model.TSClassType;
 import io.crnk.gen.typescript.model.TSImport;
 import io.crnk.gen.typescript.model.TSMember;
@@ -45,7 +45,7 @@ public class RuntimeClassoaderFactoryTest {
 
 		project.getPluginManager().apply("com.moowork.node");
 		project.getPluginManager().apply(JavaPlugin.class);
-		project.getPluginManager().apply(TSGeneratorPlugin.class);
+		project.getPluginManager().apply(TSGeneratorModule.class);
 
 		TSGeneratorExtension config = project.getExtensions().getByType(TSGeneratorExtension.class);
 		config.getRuntime().setConfiguration("test");

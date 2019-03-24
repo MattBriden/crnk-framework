@@ -30,7 +30,7 @@ import io.crnk.gen.typescript.processor.TSSourceProcessor;
 import io.crnk.gen.typescript.transform.TSMetaTransformation;
 import io.crnk.gen.typescript.transform.TSMetaTransformationContext;
 import io.crnk.gen.typescript.transform.TSMetaTransformationOptions;
-import io.crnk.gen.typescript.writer.TSWriter;
+import io.crnk.gen.typescript.model.writer.TSWriter;
 import io.crnk.meta.MetaLookup;
 import io.crnk.meta.internal.resource.ResourceMetaParitition;
 import io.crnk.meta.model.MetaElement;
